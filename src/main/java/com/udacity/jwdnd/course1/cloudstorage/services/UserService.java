@@ -28,8 +28,8 @@ public class UserService {
         random.nextBytes(salt);
         String encodedSalt = Base64.getEncoder().encodeToString(salt);
         String hashedPassword = hashService.getHashedValue(user.getPassword(), encodedSalt);
-        int userid = userMapper.insert(new User(null, user.getUsername(), encodedSalt, hashedPassword, user.getFirstName(), user.getLastName()));
-        return userid;
+
+        return userMapper.insert(new User(null, user.getUsername(), encodedSalt, hashedPassword, user.getFirstName(), user.getLastName()));
     }
 
 
@@ -39,7 +39,6 @@ public class UserService {
      * @return
      */
     public boolean checkIfUserExists(String username){
-        System.out.println((userMapper.findByUsername(username) != null) + "bool");
         return userMapper.findByUsername(username) != null;
     }
 }

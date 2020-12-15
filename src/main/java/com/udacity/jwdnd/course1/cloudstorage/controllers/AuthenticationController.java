@@ -59,12 +59,13 @@ public class AuthenticationController {
         }
         try {
             userService.createUser(user);
+
         }catch (Exception e){
             bindingResult.rejectValue("username", "user.username","An account already exists for this username.");
             model.addAttribute("registrationForm", user);
             return "signup";
         }
-        return "redirect:/home";
+        return "redirect:/login?success=true";
 
     }
 

@@ -15,6 +15,11 @@
          <h1 class="display-5">Login</h1>
          <form name="f" action="#" th:action="@{/login}" method="POST">
 
+             <div th:if="${param.success}"
+                  class="alert alert-success">
+              User creation was successful, you can log in now!
+             </div>
+
              <div th:if="${param.error}"
                   class="alert alert-danger">
                  Invalid username or password
