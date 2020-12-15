@@ -1,0 +1,31 @@
+/*
+COLORS:
+Light Blue: #add8e6 173, 216, 230
+Medium Blue: #0000cd 	0, 0, 205
+Dark Blue: #00008b  	0, 0, 139
+*/
+
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+            to right bottom,
+            rgba(0, 0, 139, 0.8),
+            rgba(173, 216, 230, 0.8)
+    );
+    background-size: cover;
+    /*background-position: top;*/
+    clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+    /*position: relative;*/
+}
+
+.form-box-login {
+    transform: translate(150%, 0%);
+    height: 50vh;
+}
+
+
+.form-box-signup {
+    transform: translate(150%, -5%);
+    height: 70vh;
+}
