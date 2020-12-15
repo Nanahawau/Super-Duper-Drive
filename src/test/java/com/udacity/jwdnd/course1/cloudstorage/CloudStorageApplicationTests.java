@@ -340,11 +340,10 @@ class CloudStorageApplicationTests {
 
 		WebElement credTab = driver.findElement(By.id("nav-credentials-tab"));
 		jse.executeScript("arguments[0].click()", credTab);
-		wait.withTimeout(Duration.ofSeconds(100));
 
 		//Create Credential
 		WebElement newCred = driver.findElement(By.id("newcred"));
-		wait.withTimeout(Duration.ofSeconds(30));
+		wait.withTimeout(Duration.ofSeconds(100));
 		wait.until(ExpectedConditions.elementToBeClickable(newCred)).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("credential-url"))).sendKeys(credURL);
 		WebElement credUsername = driver.findElement(By.id("credential-username"));
